@@ -30,15 +30,17 @@ class DebtController extends Controller
 
     public function store(Request $request)
     {
-       $name = $request->input('name');
-       $phone = $request->input('phone');
-       $notes = $request->input('notes');
 
-       Debtor::create([
-            'name' => $name,
-            'phone' => $phone,
-            'notes' => $notes
-        ]);
+    $validated = $request->validate([
+        'name' => 'required',
+        'phone' => 'required',
+        'notes' => 'nullable',
+    ]);
+    //    $name = $request->input('name');
+    //    $phone = $request->input('phone');
+    //    $notes = $request->input('notes');
+
+       Debtor::create($validated);
 
         return redirect('/debts');
     }
