@@ -32,8 +32,8 @@ class DebtController extends Controller
     {
 
     $validated = $request->validate([
-        'name' => 'required',
-        'phone' => 'required',
+        'name' => 'required|min:3',
+        'phone' => 'required|min:10|max:15',
         'notes' => 'nullable',
     ]);
     //    $name = $request->input('name');
