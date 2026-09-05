@@ -9,7 +9,7 @@
 
     <h1>Create Debtor</h1>
 
-    <form method="POST" action="/debts">
+    <form method="POST" action="{{ route('debts.index') }}">
 
         @csrf
 

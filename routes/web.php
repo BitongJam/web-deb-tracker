@@ -9,9 +9,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/debts',[DebtController::class, 'index']);
-Route::get('/debts/create',[DebtController::class, 'create']);
-Route::post('/debts',[DebtController::class, 'store']);
+Route::get('/debts',[DebtController::class, 'index'])->name('debts.index');
+Route::get('/debts/create',[DebtController::class, 'create'])->name('debts.create');
+Route::post('/debts',[DebtController::class, 'store'])->name('debts.store');
 
 
 Route::get('/dashboard',[DashboardController::class, 'dashboard']);

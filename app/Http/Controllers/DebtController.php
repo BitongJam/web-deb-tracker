@@ -48,6 +48,6 @@ class DebtController extends Controller
 
        Debtor::create($validated);
 
-        return redirect('/debts');
+        return redirect()->route('debts.index');;
     }
 }
