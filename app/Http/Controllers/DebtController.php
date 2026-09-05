@@ -50,4 +50,14 @@ class DebtController extends Controller
 
         return redirect()->route('debts.index');;
     }
+
+    public function show($id)
+    {
+        $debtor = Debtor::findOrFail($id);
+
+
+        return view('debtors.show', [
+            'debtor' => $debtor
+        ]);
+    }
 }

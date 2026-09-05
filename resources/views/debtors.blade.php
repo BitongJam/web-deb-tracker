@@ -8,7 +8,7 @@
     <h1>My Debtors</h1>
 
     @foreach ($debtors as $debtor)
-        <p>{{ $debtor->name }}</p>
+        <p>{{ $debtor->name }}</p> --- <a href="{{ route('debts.show', $debtor->id) }}">View Details</a>
     @endforeach
 
 </body>
