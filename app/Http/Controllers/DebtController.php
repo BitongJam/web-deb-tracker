@@ -35,6 +35,12 @@ class DebtController extends Controller
         'name' => 'required|min:3',
         'phone' => 'required|min:10|max:15',
         'notes' => 'nullable',
+    ],[
+        'name.required' => 'Please enter the Debtor\'s name.',
+        'name.min' => 'The Debtor\'s name must be at least 3 characters.',
+        'phone.required' => 'Please enter the Debtor\'s phone number.',
+        'phone.min' => 'The Debtor\'s phone number must be at least 10 characters.',
+        'phone.max' => 'The Debtor\'s phone number must not exceed 15 characters.',
     ]);
     //    $name = $request->input('name');
     //    $phone = $request->input('phone');
